@@ -1,7 +1,11 @@
 import { fizzBuzz } from './fizzbuzz'
 
-describe("fizzbuzz", () => {
+function outOfRangeErrorTest(input:number) {
+    expect(() => fizzBuzz(input)).toThrow(RangeError);
+    expect(() => fizzBuzz(input)).toThrow('The argument must be between 1 and 100.');
+}
 
+describe("fizzbuzz", () => {
     it('should return a string', () => {
         expect(typeof fizzBuzz(1)).toBe('string');
     })
@@ -27,12 +31,10 @@ describe("fizzbuzz", () => {
     })
     
     it('should throw a RangeError when provided with the value 102', () => {
-        expect(() => fizzBuzz(102)).toThrow(RangeError);
-        expect(() => fizzBuzz(102)).toThrow('The argument must be between 1 and 100.');
+        outOfRangeErrorTest(102);
     })
     
     it('should throw a RangeError when provided with the value -12', () => {
-        expect(() => fizzBuzz(102)).toThrow(RangeError);
-        expect(() => fizzBuzz(102)).toThrow('The argument must be between 1 and 100.');
+        outOfRangeErrorTest(-12);
     })
 });
