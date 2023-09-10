@@ -6,7 +6,7 @@ describe("fizzbuzz", () => {
         expect(typeof fizzBuzz(1)).toBe('string');
     })
 
-    it('should "Fizz" when provided with the values 3, 9, and 42', () => {
+    it('should return "Fizz" when provided with the values 3, 9, and 42', () => {
         [3, 9, 42]
             .map((input:number) => fizzBuzz(input))
             .forEach((output) => expect(output).toBe('Fizz'));
@@ -16,12 +16,10 @@ describe("fizzbuzz", () => {
         expect(fizzBuzz(5)).toBe('Buzz');
     })
 
-    it('should return "FizzBuzz" when provided with the value 15', () => {
-        expect(fizzBuzz(15)).toBe('FizzBuzz');
-    })
-    
-    it('should return "FizzBuzz" when provided with the value 45', () => {
-        expect(fizzBuzz(45)).toBe('FizzBuzz')
+    it('should "FizzBuzz" when provided with the values 15 and 45', () => {
+        [15, 45]
+            .map((input:number) => fizzBuzz(input))
+            .forEach((output) => expect(output).toBe('FizzBuzz'));
     })
 
     it('should return "43" when provided with the value 43', () => {
