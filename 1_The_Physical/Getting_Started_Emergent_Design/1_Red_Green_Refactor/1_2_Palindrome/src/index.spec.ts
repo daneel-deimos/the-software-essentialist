@@ -23,7 +23,10 @@ describe('palindrome checker', () => {
     it('should return false with the input "Momx"', () => {
         expect(palindromeChecker('Momx')).toBe(false)
     })
-
-    // "Never Odd or Even1" returns false 
+    
+    it('should return false with the input "Never Odd or Even1"', () => {
+        expect(palindromeChecker('Never Odd or Even1')).toBe(false)
+    })
+    
     // "1Never Odd or Even1" returns true
 })
