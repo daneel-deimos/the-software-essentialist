@@ -6,28 +6,24 @@ describe('palindrome checker', () => {
         expect(palindromeChecker).toBeDefined();
     });
 
-    it('should return true with the input "mom"', () => {
-        expect(palindromeChecker("mom")).toBe(true);
-    })
-
-    it('should return true with the input "Mom"', () => {
-        expect(palindromeChecker("Mom")).toBe(true);
+    it ('returns true for single word palindrome examples - mom, Mom, MoM, xMomx', () => {
+        ['mom', 'Mom', 'MoM', 'xMomx']
+            .map((word) => palindromeChecker(word))
+            .forEach((m) => expect(m).toEqual(true))
+      });
+    
+    it('should return true with the input "Was It A Rat I Saw"', () => {
+        expect(palindromeChecker("Was It A Rat I Saw")).toBe(true);
     })
     
-    it('should return true with the input "MoM"', () => {
-        expect(palindromeChecker("MoM")).toBe(true);
+    it('should return true with the input "Never Odd or Even"', () => {
+        expect(palindromeChecker("Never Odd or Even")).toBe(true);
     });
-    
+
     it('should return false with the input "Momx"', () => {
         expect(palindromeChecker('Momx')).toBe(false)
     })
 
-    it('should return true with the input "xMomx"', () => {
-        expect(palindromeChecker('xMomx')).toBe(true)
-    })
-
-    // "Was It A Rat I Saw" returns true
-    // "Never Odd or Even" returns true
     // "Never Odd or Even1" returns false 
     // "1Never Odd or Even1" returns true
 })
