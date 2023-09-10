@@ -6,7 +6,10 @@ describe('palindrome checker', () => {
         expect(palindromeChecker).toBeDefined();
     });
 
-    // "mom" returns true
+    it('should return true with the input "mom"', () => {
+        expect(palindromeChecker("mom")).toBe(true);
+    })
+
     // "Mom" returns true
     // "MoM" returns true
     // "Momx" returns false
