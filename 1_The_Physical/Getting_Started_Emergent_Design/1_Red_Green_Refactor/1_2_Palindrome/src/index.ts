@@ -1,7 +1,4 @@
 export function palindromeChecker(input:string) {
-    if (input.toLowerCase() === 'mom') {
-        return true;
-    }
-
-    return false;
+    const reversed = input.toLowerCase().split("").reverse().join("");
+    return input.toLowerCase() === reversed;
 }
