@@ -7,5 +7,9 @@ export function fizzBuzz(input:number) {
         return 'Buzz';
     }
 
+    if (input === 15) {
+        return 'FizzBuzz';
+    }
+
     return input.toString();
 }
