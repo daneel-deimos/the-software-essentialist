@@ -13,10 +13,15 @@ describe('palindrome checker', () => {
     it('should return true with the input "Mom"', () => {
         expect(palindromeChecker("Mom")).toBe(true);
     })
+    
+    it('should return true with the input "MoM"', () => {
+        expect(palindromeChecker("MoM")).toBe(true);
+    });
+    
+    it('should return false with the input "xMomx"', () => {
+        expect(palindromeChecker('xMomx')).toBe(false);
+    })
 
-    // "Mom" returns true
-    // "MoM" returns true
-    // "Momx" returns false
     // "xMomx" returns true
     // "Was It A Rat I Saw" returns true
     // "Never Odd or Even" returns true
