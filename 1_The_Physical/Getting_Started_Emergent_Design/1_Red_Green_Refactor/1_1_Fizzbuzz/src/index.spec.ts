@@ -33,4 +33,9 @@ describe("fizzbuzz", () => {
     it('should return "FizzBuzz" when provided with the value 45', () => {
         expect(fizzBuzz(45)).toBe('FizzBuzz')
     })
+
+    it('should throw a RangeError when provided with the value 102', () => {
+        expect(() => fizzBuzz(102)).toThrow(RangeError);
+        expect(() => fizzBuzz(102)).toThrow('The argument must be between 1 and 100.');
+    })
 });
