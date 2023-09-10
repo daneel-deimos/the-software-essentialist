@@ -15,7 +15,8 @@ describe('palindrome checker', () => {
     it('returns true for palindrome phrase examples - "Was It A Rat I Saw", and "Never Odd or Even"', () => {
         [
             "Was It A Rat I Saw",
-            "Never Odd or Even"
+            "Never Odd or Even",
+            "1Never Odd or Even1"
         ].map((word) => palindromeChecker(word))
         .forEach((m) => expect(m).toEqual(true))
     })
@@ -27,6 +28,4 @@ describe('palindrome checker', () => {
     it('should return false with the input "Never Odd or Even1"', () => {
         expect(palindromeChecker('Never Odd or Even1')).toBe(false)
     })
-    
-    // "1Never Odd or Even1" returns true
 })
