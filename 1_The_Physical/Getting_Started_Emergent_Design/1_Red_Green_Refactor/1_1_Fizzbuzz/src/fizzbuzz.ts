@@ -1,5 +1,5 @@
 export function fizzBuzz(input:number) {
-    if (input % 3 === 0 && input !== 15) {
+    if (input % 3 === 0 && input !== 15 && input !== 45) {
         return 'Fizz';
     }
 
@@ -7,7 +7,7 @@ export function fizzBuzz(input:number) {
         return 'Buzz';
     }
 
-    if (input === 15) {
+    if (input === 15 || input === 45) {
         return 'FizzBuzz';
     }
 
