@@ -1,3 +1,5 @@
+import { fizzBuzz } from './fizzbuzz'
+
 describe("fizzbuzz", () => {
 
     it('should return a string', () => {
