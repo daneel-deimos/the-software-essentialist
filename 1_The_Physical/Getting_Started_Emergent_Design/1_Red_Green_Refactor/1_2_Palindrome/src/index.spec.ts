@@ -12,13 +12,13 @@ describe('palindrome checker', () => {
             .forEach((m) => expect(m).toEqual(true))
       });
     
-    it('should return true with the input "Was It A Rat I Saw"', () => {
-        expect(palindromeChecker("Was It A Rat I Saw")).toBe(true);
+    it('returns true for palindrome phrase examples - "Was It A Rat I Saw", and "Never Odd or Even"', () => {
+        [
+            "Was It A Rat I Saw",
+            "Never Odd or Even"
+        ].map((word) => palindromeChecker(word))
+        .forEach((m) => expect(m).toEqual(true))
     })
-    
-    it('should return true with the input "Never Odd or Even"', () => {
-        expect(palindromeChecker("Never Odd or Even")).toBe(true);
-    });
 
     it('should return false with the input "Momx"', () => {
         expect(palindromeChecker('Momx')).toBe(false)
