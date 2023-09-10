@@ -1,3 +1,5 @@
+import { palindromeChecker } from './index'
+
 describe('palindrome checker', () => {
 
     it('should exist', () => {
