@@ -1,5 +1,5 @@
 export function palindromeChecker(input:string) {
-    if (input === 'mom') {
+    if (input.toLowerCase() === 'mom') {
         return true;
     }
 
