@@ -3,7 +3,7 @@ export function fizzBuzz(input:number) {
         throw new RangeError('The argument must be between 1 and 100.')
     }
 
-    if (input === 15 || input === 45) {
+    if (input % 3 === 0 && input % 5 === 0) {
         return 'FizzBuzz';
     }
 
@@ -11,10 +11,9 @@ export function fizzBuzz(input:number) {
         return 'Fizz';
     }
 
-    if (input === 5) {
+    if (input % 5 === 0) {
         return 'Buzz';
     }
-
 
     return input.toString();
 }

@@ -21,7 +21,7 @@ describe("fizzbuzz", () => {
     })
 
     it('should "FizzBuzz" when provided with the values 15 and 45', () => {
-        [15, 45]
+        [15, 45, 60, 75]
             .map((input:number) => fizzBuzz(input))
             .forEach((output) => expect(output).toBe('FizzBuzz'));
     })
