@@ -6,26 +6,37 @@ describe('palindrome checker', () => {
         expect(palindromeChecker).toBeDefined();
     });
 
-    it ('returns true for single word palindrome examples - mom, Mom, MoM, xMomx', () => {
-        ['mom', 'Mom', 'MoM', 'xMomx']
-            .map((word) => palindromeChecker(word))
-            .forEach((m) => expect(m).toEqual(true))
-      });
-    
-    it('returns true for palindrome phrase examples - "Was It A Rat I Saw", and "Never Odd or Even"', () => {
-        [
-            "Was It A Rat I Saw",
-            "Never Odd or Even",
-            "1Never Odd or Even1"
-        ].map((word) => palindromeChecker(word))
-        .forEach((m) => expect(m).toEqual(true))
-    })
+    describe('Recognize palindromes of small words', () => {
+        it.each(
+            [
+                ['mom', true],
+                ['Mom', true],
+                ['MoM', true],
+                ['xMomx', true],
+                ["Racecar", true],
+                ["Mastery", false],
+                ["Perseverence", false],
+                ["Apple", false],
+                ["supercalifragilisticexpialidocious", false]
+            ]
+        )("Knows that '%s' is a palindrome", (word, expectedResult) => {
+            expect(palindromeChecker(word)).toBe(expectedResult);
+        });
+    });
 
-    it('should return false with the input "Momx"', () => {
-        expect(palindromeChecker('Momx')).toBe(false)
-    })
-    
-    it('should return false with the input "Never Odd or Even1"', () => {
-        expect(palindromeChecker('Never Odd or Even1')).toBe(false)
+    describe('Recognize palindromes of phrases containing multiple words', () => {
+        it.each(
+            [
+                ["Was It A Rat I Saw", true],
+                ["Never Odd or Even", true],
+                ["1Never Odd or Even1", true],
+                ["A Toyota's a Toyota", true],
+                ["Never Odd or Even1", false],
+                ["How now brown cow", false],
+                ["The Human Torch was denied a bankloan", false]
+            ]
+        )("Knows that '%s' is a palindrome", (phrase, expectedResult) => {
+            expect(palindromeChecker(phrase)).toBe(expectedResult);
+        })
     })
 })
